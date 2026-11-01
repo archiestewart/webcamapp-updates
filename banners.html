@@ -6,36 +6,25 @@
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self' https: data:; base-uri 'none'; form-action 'none'">
-<title>Баннеры</title>
+<title>Баннер</title>
 <link rel="icon" href="data:,">
 <style>
   * { box-sizing: border-box; }
   html, body { margin: 0; background: transparent; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
 
-  /* Телефон: баннеры листаются пальцем. Компьютер: три в ряд. */
-  .cards {
-    display: flex;
-    gap: 12px;
-    padding: 16px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-padding-inline: 16px;
-    -webkit-overflow-scrolling: touch;
-  }
+  .cards { padding: 16px; }
   .card {
     position: relative;
-    flex: 0 0 min(82%, 320px);
-    min-height: 216px;
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    min-height: 216px;
+    padding: 24px;
     border-radius: 16px;
     overflow: hidden;
     color: var(--ink);
     background: var(--bg);
     text-decoration: none;
-    scroll-snap-align: start;
   }
   .card:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
   .card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -44,59 +33,43 @@
   .mark { font-size: 12px; line-height: 16px; opacity: .75; }
   .title {
     margin: 8px 0 6px;
-    font: 600 22px/1.2 Georgia, "Times New Roman", serif;
+    font: 600 30px/1.2 Georgia, "Times New Roman", serif;
     text-wrap: balance;
   }
-  .text { margin: 0 0 16px; font-size: 14px; line-height: 20px; }
+  .text { margin: 0 0 16px; font-size: 16px; line-height: 22px; }
   .action {
     align-self: flex-start;
     margin-top: auto;
-    padding: 8px 14px;
+    padding: 8px 18px;
     border-radius: 999px;
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
-    color: var(--bg);
-    background: var(--ink);
+    color: var(--on-action);
+    background: var(--action);
   }
 
-  .sand { --bg: #F3E3CF; --ink: #3A2A1C; }
-  .sage { --bg: #DDE7D8; --ink: #22352A; }
-  .dusk { --bg: #2F3350; --ink: #F4F1EA; }
+  .to2 { --bg: #F6F1EA; --ink: #3A2A1C; --action: #A65F45; --on-action: #FFFFFF; }
 
-  @media (min-width: 720px) {
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); overflow: visible; }
+  @media (max-width: 480px) {
+    .title { font-size: 24px; }
   }
 </style>
 </head>
 <body>
   <!--
-    Каждый баннер — один блок <a class="card">. Чтобы добавить новый, скопируйте блок целиком.
-    Что менять: адрес в href, заголовок, текст, надпись на кнопке и цвет (sand, sage или dusk).
+    Один баннер — один блок <a class="card">.
+    Что менять: адрес в href, заголовок, текст и надпись на кнопке.
     Своя картинка на весь баннер: положите файл рядом и добавьте первой строкой внутри <a>:
       <img src="имя-файла.jpg" alt="Что на картинке">
     Скрипты в приложении не работают.
   -->
   <main class="cards">
-    <a class="card sand" href="https://example.com/" target="_blank" rel="sponsored noopener noreferrer">
+    <a class="card to2" href="https://to2app.love/" target="_blank" rel="sponsored noopener noreferrer">
       <span class="mark">Реклама</span>
-      <p class="title">Заголовок первого баннера</p>
-      <p class="text">Одно-два коротких предложения о том, что вы предлагаете.</p>
-      <span class="action">Подробнее</span>
-    </a>
-
-    <a class="card sage" href="https://example.com/" target="_blank" rel="sponsored noopener noreferrer">
-      <span class="mark">Реклама</span>
-      <p class="title">Заголовок второго баннера</p>
-      <p class="text">Одно-два коротких предложения о том, что вы предлагаете.</p>
-      <span class="action">Подробнее</span>
-    </a>
-
-    <a class="card dusk" href="https://example.com/" target="_blank" rel="sponsored noopener noreferrer">
-      <span class="mark">Реклама</span>
-      <p class="title">Заголовок третьего баннера</p>
-      <p class="text">Одно-два коротких предложения о том, что вы предлагаете.</p>
-      <span class="action">Подробнее</span>
+      <p class="title">To2 — маленький мир на двоих</p>
+      <p class="text">Квест дня, письма, общая комната и питомец. Бесплатно.</p>
+      <span class="action">Открыть</span>
     </a>
   </main>
 </body>
