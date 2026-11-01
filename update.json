@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
-  "notes": "",
-  "url": "https://github.com/archiestewart/webcamapp-updates/releases"
+  "version": "0.1.1",
+  "notes": "Тестовая сборка: текстура «2K зерно» встроена в приложение, исправлена строка в «О программе».",
+  "url": "https://github.com/archiestewart/webcamapp-updates/releases/tag/v0.1.1-test2"
 }
